@@ -1,0 +1,28 @@
+
+nz-content{
+    background-image: url('../../../../assets/img/tienda.jpg');
+    width: 100vw;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+}
+
+button{
+    color: rgb(255, 250, 240);
+    background-color: rgb(1 86 110);
+    border: rgb(28 28 28);
+    position: relative;
+    left: 50%;
+    top: 50%;
+}
+
+h1{
+    position: relative;
+    top: 38%;
+    text-align: center;
+    font-family: 'Luckiest Guy', cursive;
+    color: #fbd907;
+    font-size: 4rem;
+    -webkit-text-stroke: 2px black;
+}

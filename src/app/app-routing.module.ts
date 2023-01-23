@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { NoContentComponent } from './core/layout/no-content/no-content.component';
+import { NoContentComponent } from './features/layout/no-content/no-content.component';
 
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () => import('.//core/layout/layout.module').then(m=> m.LayoutModule)
+    loadChildren: () => import('.//features/layout/layout.module').then(m=> m.LayoutModule)
   },
   {
     path: 'products',

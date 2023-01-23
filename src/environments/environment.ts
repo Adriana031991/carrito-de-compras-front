@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  urlListsProducts: 'http://localhost:8080/products/paginated?page&size',
+  urlCreateShoppingCart: 'http://localhost:8080/shopping-car/create-shopping-car',
 };
 
 /*
