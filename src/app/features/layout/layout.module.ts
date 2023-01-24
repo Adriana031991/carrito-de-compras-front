@@ -18,6 +18,10 @@ import { UiModule } from 'src/app/shared/ui.module';
     CommonModule,
     LayoutRoutingModule,
     UiModule
-  ]
+  ],
+  // exports: [
+  //   SidebarComponent,
+
+  // ]
 })
 export class LayoutModule { }

@@ -8,7 +8,6 @@ const routes: Routes = [
     path: '',
     children: [
       { path: '', component: WelcomeComponent },
-      { path: 'content', component: SidebarComponent },
 
     ]
   },

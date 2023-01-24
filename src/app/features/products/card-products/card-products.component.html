@@ -1,1 +1,32 @@
-<p>card-products works!</p>
+<div class="margen">
+    
+<div *ngFor="let item of products">
+    
+    <div nz-card-grid class="gridStyle">
+        
+        <nz-card [nzCover]="coverTemplate" [nzActions]="[actionAddCart, Quantity]" >
+            <nz-card-meta [nzTitle]=item.name></nz-card-meta>
+        </nz-card>
+        
+
+        <ng-template #coverTemplate>
+            <img alt="imagen producto" [src]=item.image />
+        </ng-template>
+        
+        <ng-template #actionAddCart>
+            <p> Añadir a carrito </p>
+            <span nz-icon nzType="plus"> </span>
+        </ng-template>
+        
+        <ng-template #Quantity>
+            <p>Cantidad disponible</p>
+            {{item.quantity? item.quantity : 0}}
+        </ng-template>
+        
+    </div>
+    
+</div>
+
+</div>
+<nz-pagination [nzPageIndex]="pageIndex" [nzTotal]="totalElements" nzShowSizeChanger [nzPageSize]="pageSize">
+</nz-pagination>

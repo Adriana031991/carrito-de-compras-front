@@ -1,0 +1,26 @@
+p {
+    margin: 0;
+  }
+
+nz-card {
+    width:200px !important;
+}
+
+.ant-card-body {
+    padding: 10px !important;
+}
+
+.margen {
+    height:90%;
+    overflow: scroll;
+    margin-bottom: 3%;
+}
+
+.ant-pagination {
+    text-align: right !important;
+}
+
+.gridStyle {
+    width: 50%;
+    textAlign: center;
+}

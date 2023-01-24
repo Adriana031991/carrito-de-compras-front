@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { ProductsRoutingModule } from './products-routing.module';
 import { CardProductsComponent } from './card-products/card-products.component';
 import { TableProductsComponent } from './table-products/table-products.component';
+import { UiModule } from 'src/app/shared/ui.module';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { TableProductsComponent } from './table-products/table-products.componen
   ],
   imports: [
     CommonModule,
-    ProductsRoutingModule
+    ProductsRoutingModule,
+    UiModule
   ]
 })
 export class ProductsModule { }

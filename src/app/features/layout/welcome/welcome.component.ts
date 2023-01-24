@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ResponseIDShoppingCart } from 'src/app/core/models/RespIdShoppingCart';
+import { Router } from '@angular/router';
+import { ResponseIDShoppingCart } from 'src/app/core/models/ShoppingCart.model';
+import { SharedDataService } from 'src/app/shared/shared-data.service';
 import { ShoopingCartService } from '../../../core/services/shooping-cart.service';
 
 @Component({
@@ -9,19 +11,19 @@ import { ShoopingCartService } from '../../../core/services/shooping-cart.servic
 })
 export class WelcomeComponent implements OnInit {
 
-  uno!:ResponseIDShoppingCart;
-  constructor( private service: ShoopingCartService) { }
+
+  constructor(private service: ShoopingCartService, private sharedService: SharedDataService, private router: Router) { }
 
   ngOnInit(): void {
   }
 
-  createShoppingCart(){
-    this.service.createShoppingCart().subscribe( 
+  createShoppingCart() {
+    this.service.createShoppingCart().subscribe(
       id => {
-      this.uno = id;
-
-    }
+        this.sharedService.carId.emit(id)
+      }
     );
+      this.router.navigate(['/products/cards'])
   }
 
 }
