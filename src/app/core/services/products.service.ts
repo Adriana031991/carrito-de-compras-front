@@ -2,7 +2,7 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { Product } from '../models/products.model';
+import { Product, ResponseDeleteProduct } from '../models/products.model';
 import { ProductsPaginated } from '../models/ProductsPaginated';
 
 @Injectable({
@@ -46,8 +46,8 @@ export class ProductsService {
     return this.http.put<Product>(`${this.UrlUpdateProduct}/${productId}`, body);
   }
 
-  deleteProduct(productId: string): Observable<string> {
-    return this.http.delete<string>(`${this.UrlDeleteProduct}/${productId}`);
+  deleteProduct(productId: string): Observable<ResponseDeleteProduct> {
+    return this.http.delete<ResponseDeleteProduct>(`${this.UrlDeleteProduct}/${productId}`);
   }
 
 }

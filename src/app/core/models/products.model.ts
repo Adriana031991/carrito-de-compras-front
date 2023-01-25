@@ -5,3 +5,7 @@ export interface Product {
     quantity: number;
     image:    null;
 }
+
+export interface ResponseDeleteProduct {
+    response: string;
+}

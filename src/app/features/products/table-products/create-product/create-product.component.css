@@ -1,0 +1,8 @@
+.modulo {
+    align-content: center !important;
+    padding: 0px 25px !important;
+  }
+
+nz-form-item.ant-form-item{
+    margin: 0 auto !important;
+}

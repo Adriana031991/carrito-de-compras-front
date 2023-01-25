@@ -1,0 +1,26 @@
+.table-operations {
+    margin-bottom: 16px;
+  }
+
+  .table-operations > button {
+    margin-right: 8px;
+  }
+
+  .margen {
+    height:90%;
+    overflow: scroll;
+    margin-bottom: 3%;
+}
+button {
+  margin: 0 5px;
+}
+
+.green {
+  background: #6ad21ee6;
+    border-color: #6ad21ee6;
+}
+
+img {
+  width: 50%;
+  text-align: center;
+}

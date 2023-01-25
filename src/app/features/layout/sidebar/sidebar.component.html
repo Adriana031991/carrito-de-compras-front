@@ -13,7 +13,7 @@
           <ul>
             <li nz-menu-item nzMatchRouter>
               <em nz-icon nzType="shopping"></em>
-              <a routerLink="products/cards">Productos</a>
+              <a routerLink="products/cards">Lista de Productos</a>
             </li>
           </ul>
         </li>
@@ -37,7 +37,23 @@
         </li>
   
   
+        <nz-divider class="line" nzText="Admin" nzOrientation="left"></nz-divider>
+  
+        <li nz-submenu nzOpen nzTitle="Productos" nzIcon="table">
+          <ul>
+            <li nz-menu-item nzMatchRouter>
+              <em nz-icon nzType="shopping"></em>
+              <a routerLink="products/table">Lista de Productos</a>
+            </li>
+          </ul>
+        </li>  
+
       </ul>
+
+ 
+
+  
+
     </nz-sider>
     <nz-layout class="main-container">
       <nz-header>
@@ -46,6 +62,7 @@
             <em class="trigger" nz-icon *ngIf="isCollapsed" [nzType]="'menu-unfold'"></em>
             <em class="trigger" nz-icon *ngIf="!isCollapsed" [nzType]="'menu-fold'"></em>
           </span>
+
         </div>
       </nz-header>
       <nz-content>

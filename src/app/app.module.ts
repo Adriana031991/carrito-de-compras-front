@@ -7,10 +7,12 @@ import { NZ_I18N } from 'ng-zorro-antd/i18n';
 import { es_ES } from 'ng-zorro-antd/i18n';
 import { registerLocaleData } from '@angular/common';
 import es from '@angular/common/locales/es';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LayoutModule } from './features/layout/layout.module';
+import { ProductsModule } from './features/products/products.module';
+import { ShoppingCartModule } from './features/shopping-cart/shopping-cart.module';
 
 registerLocaleData(es);
 
@@ -23,9 +25,12 @@ registerLocaleData(es);
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    LayoutModule
+    LayoutModule,
+    ProductsModule,
+    ShoppingCartModule,
   ],
   providers: [
     { provide: NZ_I18N, useValue: es_ES }
