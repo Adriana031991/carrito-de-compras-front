@@ -24,3 +24,14 @@ nz-card {
     width: 50%;
     textAlign: center;
 }
+
+
+
+button {
+    background: #6ad21ee6;
+    border-color: #6ad21ee6;
+}
+
+.quantity {
+    color: black;
+}

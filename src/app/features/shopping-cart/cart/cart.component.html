@@ -1,1 +1,32 @@
-<p>cart works!</p>
+<div>
+    <h3>Ir al carrito de compra</h3>
+    <button nz-button nzType="default" nzType="primary" (click)="showModal()">
+        <span nz-icon nzType="shopping-cart" nzTheme="outline"></span>
+      </button>
+</div>
+  
+  
+  <nz-modal [(nzVisible)]="isVisible" [nzTitle]="modalTitle" [nzContent]="modalContent" [nzFooter]="modalFooter"
+    (nzOnCancel)="handleCancel()">
+  
+    <ng-template #modalTitle> <span style="font-weight: 700"> Carrito de compra </span> </ng-template>
+  
+    <div nz-row nzJustify="space-around" nzAlign="middle">
+      <div nz-col nzXs="2" nzSm="4" nzMd="6" nzLg="8" nzXl="10">
+        <ng-template #modalContent>
+          
+          <app-table-cart></app-table-cart>
+  
+        </ng-template>
+  
+        <ng-template #modalFooter>
+          <button nz-button nzType="text" (click)="handleCancel()">Cancelar</button>
+          <button nz-button (click)="handleOk()" nzType="primary">Guardar</button>
+  
+        </ng-template>
+  
+      </div>
+  
+    </div>
+  </nz-modal>
+  

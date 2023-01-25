@@ -14,13 +14,15 @@
         </ng-template>
         
         <ng-template #actionAddCart>
-            <p> Añadir a carrito </p>
-            <span nz-icon nzType="plus"> </span>
+             Añadir a carrito 
+            <button nz-button nzType="primary" [nzSize]="'small'" nzShape="circle" (click)="addToCart(item)">
+                <span nz-icon nzType="plus"> </span>
+            </button>
         </ng-template>
         
         <ng-template #Quantity>
-            <p>Cantidad disponible</p>
-            {{item.quantity? item.quantity : 0}}
+            Cantidad disponible
+            <span class="quantity"> {{item.quantity? item.quantity : 0}} </span>
         </ng-template>
         
     </div>

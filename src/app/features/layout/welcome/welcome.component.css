@@ -1,9 +1,9 @@
 
 nz-content{
     background-image: url('../../../../assets/img/tienda.jpg');
-    /* width: 100vw; */
-    /* height: 100vh; */
-    /* background-repeat: no-repeat; */
+    width: 100vw; 
+    height: 100vh;
+    background-repeat: no-repeat; 
     background-size: cover;
     /* position: absolute; */
 }

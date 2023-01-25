@@ -7,12 +7,12 @@ const routes: Routes = [
 
   {
     path: '',
+    loadChildren: () => import('.//features/layout/layout.module').then(m => m.LayoutModule)
+  },
+  {
+    path: '',
     component: SidebarComponent,
     children: [
-      {
-        path: '',
-        loadChildren: () => import('.//features/layout/layout.module').then(m => m.LayoutModule)
-      },
       {
         path: 'products',
         loadChildren: () => import('.//features/products/products.module').then(m => m.ProductsModule)

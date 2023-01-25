@@ -11,6 +11,7 @@ export const environment = {
   urlUpdateProduct: 'http://localhost:8080/products/update',
   urlDeleteProduct: 'http://localhost:8080/products/delete',
   urlListShoppingCart: 'http://localhost:8080/shopping-car',
+  urlShoppingCart: 'http://localhost:8080/shopping-car/get-cart-by-carId',
   urlCreateShoppingCart: 'http://localhost:8080/shopping-car/create-shopping-car',
   urlAddProductToShoppingCart: 'http://localhost:8080/shopping-car/add-product-to-car',
   urlUpdateQuantityProductShoppingCart: 'http://localhost:8080/shopping-car/update-quantity',

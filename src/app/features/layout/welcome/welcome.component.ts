@@ -20,7 +20,8 @@ export class WelcomeComponent implements OnInit {
   createShoppingCart() {
     this.service.createShoppingCart().subscribe(
       id => {
-        this.sharedService.carId.emit(id)
+        this.sharedService.sharedCardId(id);
+        localStorage.setItem('idCart', id.idShoppingCart)
       }
     );
       this.router.navigate(['/products/cards'])
