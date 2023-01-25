@@ -1,0 +1,26 @@
+<nz-table #basicTable [nzData]="itemsCar" >
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Valor</th>
+        <th>Cantidad</th>
+        <th>Imagen</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of basicTable.data">
+        <td>{{ data.product.name }}</td>
+        <td>{{ data.product.value }}</td>
+        <td>{{ data.quantity }}</td>
+        <td class="image">
+          <img [src]=data.product.image alt="">
+        </td>
+        <td>
+          <button nz-button nzType="default" nzType="primary" (click)="deleteProduct(data.product)">
+            <span nz-icon nzType="delete" nzTheme="outline"></span>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </nz-table>

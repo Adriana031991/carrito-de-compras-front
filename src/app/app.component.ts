@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NzIconService } from 'ng-zorro-antd/icon';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'shopping-car-front';
+
+
 }

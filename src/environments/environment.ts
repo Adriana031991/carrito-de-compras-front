@@ -3,7 +3,21 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  urlListsProducts: 'http://localhost:8080/products/paginated?page&size',
+  urlProduct: 'http://localhost:8080/products',
+  urlGetProductByName: 'http://localhost:8080/products/product-by-name',
+  urlGetProductById: 'http://localhost:8080/products/product-by-id',
+  urlUpdateProduct: 'http://localhost:8080/products/update',
+  urlDeleteProduct: 'http://localhost:8080/products/delete',
+  urlListShoppingCart: 'http://localhost:8080/shopping-car',
+  urlShoppingCart: 'http://localhost:8080/shopping-car/get-cart-by-carId',
+  urlCreateShoppingCart: 'http://localhost:8080/shopping-car/create-shopping-car',
+  urlAddProductToShoppingCart: 'http://localhost:8080/shopping-car/add-product-to-car',
+  urlUpdateQuantityProductShoppingCart: 'http://localhost:8080/shopping-car/update-quantity',
+  urlInvoicesList:'http://localhost:8080/invoice',
+  urlCreateIdInvoice:'http://localhost:8080/invoice/create-invoice',
+  urlCreateInvoice:'http://localhost:8080/invoice/car',
 };
 
 /*
