@@ -1,4 +1,6 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import { NzModalService } from 'ng-zorro-antd/modal';
 import { map, Subject, Subscription, takeUntil } from 'rxjs';
 import { ShoopingCartService } from 'src/app/core/services/shooping-cart.service';
 import { SharedDataService } from 'src/app/shared/shared-data.service';
@@ -19,7 +21,10 @@ export class CartComponent implements OnInit, OnDestroy {
   
 
 
-  constructor(private shoopingCartService: ShoopingCartService, private sharedService: SharedDataService,) { 
+  constructor( 
+    private modalService: NzModalService, 
+    private shoopingCartService: ShoopingCartService, 
+    private sharedService: SharedDataService,) { 
     this.cartID = localStorage.getItem('idCart');
 
   }
@@ -41,9 +46,27 @@ export class CartComponent implements OnInit, OnDestroy {
   showModal(): void {
     this.isVisible = true;
     if (this.cartID != null) {
-      this.subscription = this.shoopingCartService.getCart(this.cartID).subscribe((cart: ShoppingCart) => {
-        this.sharedService.sharedProducts(cart);
-      })
+      this.subscription = this.shoopingCartService.getCart(this.cartID).subscribe(
+        
+        {
+          next: (data: ShoppingCart) => {
+            this.sharedService.sharedProducts(data);
+          },
+          
+          error: (err: HttpErrorResponse) => {
+            this.modalService.error({
+              nzTitle: 'Producto no creado ',
+              nzContent: `No se ha podido crear el producto`,
+              nzMaskClosable: false,
+              nzFooter: null,
+              nzWidth: "80%",
+              nzStyle: { top: "20px" },
+            })
+          }
+        });
+      //   (cart: ShoppingCart) => {
+      //   this.sharedService.sharedProducts(cart);
+      // })
       
     }
   }
@@ -53,7 +76,7 @@ export class CartComponent implements OnInit, OnDestroy {
   }
 
   handleOk(): void {
-
+    this.modalService.closeAll();
   }
   
 }

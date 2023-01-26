@@ -16,6 +16,11 @@ import { TableCartComponent } from './cart/table-cart/table-cart.component';
     CommonModule,
     ShoppingCartRoutingModule,
     UiModule
+  ],
+  exports: [
+    CartComponent,
+    TableCartComponent
+
   ]
 })
 export class ShoppingCartModule { }

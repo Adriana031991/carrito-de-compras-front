@@ -16,7 +16,6 @@ export class TableCartComponent implements OnInit {
 
 
   destroyConfigure$ = new Subject<void>();
-  products!: ShoppingCart;
   itemsCar: ItemsCar[] = [];
 
 
@@ -44,15 +43,25 @@ export class TableCartComponent implements OnInit {
     console.log('data', product)
     let indx = this.itemsCar.findIndex(p => p.product.id === product.id);
     this.itemsCar.splice(indx, 1);
-    console.log('indx', this.itemsCar)
+    
     this.modal.confirm({
       nzTitle: 'Eliminar producto de la lista',
       nzContent: `Esta seguro de eliminar el producto ${product.name}`,
       nzClosable: false,
-      nzOnOk: () => new Promise(resolve => {
-        //TODO: disparar actualizar pagina y revisar que los productos si se resten de la db
-        setTimeout(resolve, 100)
-      })
-    });
+      nzOnOk: () => {
+          if (product.id != undefined) {
+            console.log('first', product.id)
+          return this.deleteRow(product.id)}
+        }
+      });
+
+  }
+
+  deleteRow(id: string): void {
+    // console.log('eee', this.itemsCar.filter(d => d.id !== id))
+    let indx = this.itemsCar.findIndex(d => d.product.id === id )
+    this.itemsCar.splice(indx,1);
+    console.log('this.itemsCar', this.itemsCar)
+    // this.itemsCar = this.itemsCar.filter(d => d.id !== id);
   }
 }

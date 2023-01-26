@@ -13,16 +13,7 @@
           <ul>
             <li nz-menu-item nzMatchRouter>
               <em nz-icon nzType="shopping"></em>
-              <a routerLink="products/cards">Productos</a>
-            </li>
-          </ul>
-        </li>
-  
-        <li nz-submenu nzOpen nzTitle="Carrito de compras" nzIcon="shopping-cart">
-          <ul>
-            <li nz-menu-item nzMatchRouter>
-              <em nz-icon nzType="shopping-cart" nzTheme="outline"></em>
-              <a routerLink="cart">Carrito de compras</a>
+              <a routerLink="products/cards">Lista de Productos</a>
             </li>
           </ul>
         </li>
@@ -31,13 +22,29 @@
           <ul>
             <li nz-menu-item nzMatchRouter>
               <span nz-icon nzType="file-text" nzTheme="outline"></span>
-              <a routerLink="">Compras</a>
+              <a routerLink="invoice">Compras</a>
             </li>
           </ul>
         </li>
   
   
+        <nz-divider class="line" nzText="Admin" nzOrientation="left"></nz-divider>
+  
+        <li nz-submenu nzOpen nzTitle="Productos" nzIcon="table">
+          <ul>
+            <li nz-menu-item nzMatchRouter>
+              <em nz-icon nzType="shopping"></em>
+              <a routerLink="products/table">Lista de Productos</a>
+            </li>
+          </ul>
+        </li>  
+
       </ul>
+
+ 
+
+  
+
     </nz-sider>
     <nz-layout class="main-container">
       <nz-header>
@@ -46,6 +53,7 @@
             <em class="trigger" nz-icon *ngIf="isCollapsed" [nzType]="'menu-unfold'"></em>
             <em class="trigger" nz-icon *ngIf="!isCollapsed" [nzType]="'menu-fold'"></em>
           </span>
+
         </div>
       </nz-header>
       <nz-content>

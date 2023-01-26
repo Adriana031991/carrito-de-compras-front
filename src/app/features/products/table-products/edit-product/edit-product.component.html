@@ -1,0 +1,45 @@
+<div>
+    <nz-table nzBordered>
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Imagen</th>
+            <th>Valor unitario</th>
+            <th>Cantidad</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="editable-row">
+            <td>
+              <div class="editable-cell" [hidden]="editId === data.id" (click)="startEdit(data.id!)">
+                {{ data.name }}
+              </div>
+              <input [hidden]="editId !== data.id" type="text" nz-input [(ngModel)]="data.name" (blur)="stopEdit()" />
+            </td>
+            <td>
+              <div class="editable-cell" [hidden]="editId === data.id" (click)="startEdit(data.id!)">
+                <img [src]="data.image" alt="data.image">
+              </div>
+              <input [hidden]="editId !== data.id" type="text" nz-input [(ngModel)]="data.image" (blur)="stopEdit()" />
+            </td>
+            <td>
+              <div class="editable-cell" [hidden]="editId === data.id" (click)="startEdit(data.id!)">
+                {{ data.value }}
+              </div>
+              <input [hidden]="editId !== data.id" type="text" nz-input [(ngModel)]="data.value" (blur)="stopEdit()" />
+            </td>
+            <td>
+              <div class="editable-cell" [hidden]="editId === data.id" (click)="startEdit(data.id!)">
+                {{ data.quantity }}
+              </div>
+              <input [hidden]="editId !== data.id" type="text" nz-input [(ngModel)]="data.quantity" (blur)="stopEdit()" />
+            </td>
+            
+          </tr>
+        </tbody>
+      </nz-table>
+  </div>
+  <div *nzModalFooter>
+    <button nz-button nzType="default" (click)="destroyModal()">Cancelar</button>
+    <button nz-button nzType="primary" (click)="updateProduct()">Actualizar</button>
+  </div>

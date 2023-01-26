@@ -1,0 +1,57 @@
+<div>
+    <form nz-form [formGroup]="createProductForm" class="ant-advanced-search-form" 
+          autocomplete="off">
+          <div class="modulo">
+
+            <nz-form-item>
+              <nz-form-control nzValidatingTip="Validating..." nzErrorTip="Debe ingresar el nombre del producto ">
+                <nz-input-group>
+                  <nz-form-label nzRequired>Nombre</nz-form-label>
+                  <input nzSize="small" nz-input placeholder="Ingrese un nombre" formControlName="name" type="text"
+                    nzSize="large" />
+                </nz-input-group>
+              </nz-form-control>
+            </nz-form-item>
+
+            <nz-form-item>
+              <nz-form-control nzValidatingTip="Validating..." nzErrorTip="Debe ingresar la url de una imagen del producto">
+                <nz-input-group>
+                  <nz-form-label nzRequired>Imagen</nz-form-label>
+                  <input nzSize="small" nz-input placeholder="Ingrese una url de imagen" formControlName="image" type="text"
+                    nzSize="large" />
+                </nz-input-group>
+              </nz-form-control>
+            </nz-form-item>
+
+            <nz-form-item>
+              <nz-form-control nzValidatingTip="Validating..." nzErrorTip="Debe ingresar el valor del producto ">
+                <nz-input-group>
+                  <nz-form-label nzRequired>Valor</nz-form-label>
+                  <input nzSize="small" nz-input placeholder="Ingrese un valor" formControlName="value" type="text"
+                    nzSize="large" />
+                </nz-input-group>
+              </nz-form-control>
+            </nz-form-item>
+
+
+            <nz-form-item>
+              <nz-form-control nzValidatingTip="Validating..." nzErrorTip="Debe ingresar la cantidad del producto ">
+                <nz-input-group>
+                  <nz-form-label nzRequired>Cantidad</nz-form-label>
+                  <input nzSize="small" nz-input placeholder="Ingrese una cantidad" formControlName="quantity" type="text"
+                    nzSize="large" />
+                </nz-input-group>
+              </nz-form-control>
+            </nz-form-item>
+
+
+
+            </div>
+          
+        </form>
+</div>
+
+<div *nzModalFooter>
+    <button nz-button nzType="default" (click)="destroyModal()">Cancelar</button>
+    <button nz-button nzType="primary" (click)="createProduct()" [disabled]="!createProductForm.valid">Crear</button>
+</div>

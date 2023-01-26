@@ -1,3 +1,4 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { Subscription } from 'rxjs';
@@ -38,7 +39,7 @@ export class CardProductsComponent implements OnInit, OnDestroy {
 
 
   ngOnInit(): void {
-    this.subscription = this.service.getListsProducts('', '').subscribe(products => {
+    this.subscription = this.service.getListsProducts(this.pageIndex='', this.pageSize= '').subscribe(products => {
       this.listProducts = products;
 
       const arr = Object.entries(this.listProducts);
@@ -90,10 +91,35 @@ export class CardProductsComponent implements OnInit, OnDestroy {
       });
     }
     if (cartId != null) {
-      this.shoopingCartService.addProductToShoppingCart(cartId,productId).subscribe(result=>{
-        let response = (result === 1) ? 'addProductOk': 'notProductAdded';
-        this.sharedService.addProductToCart.emit( response )
-      })
+      this.shoopingCartService.addProductToShoppingCart(cartId,productId).subscribe(
+        {
+          next: (data: any) => {
+            this.modal.success({
+              nzTitle: 'Se ha añadido el producto',
+              nzContent: `Se ha añadido correctamente al carrito el producto: ${data.name}`,
+              nzMaskClosable: false,
+              nzFooter: null,
+              nzWidth: "80%",
+              nzStyle: { top: "20px" },
+            })
+            this.sharedService.addProductToCart.emit( data );
+          },
+          
+          error: (err: HttpErrorResponse) => {
+            this.modal.error({
+              nzTitle: 'Producto no agregado ',
+              nzContent: `No se ha podido agregar el producto al carrito`,
+              nzMaskClosable: false,
+              nzFooter: null,
+              nzWidth: "80%",
+              nzStyle: { top: "20px" },
+            })
+          }
+        });
+      //   result=>{
+      //   let response = (result === 1) ? 'addProductOk': 'notProductAdded';
+      //   this.sharedService.addProductToCart.emit( response )
+      // })
       
     }
   }
