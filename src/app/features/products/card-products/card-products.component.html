@@ -1,33 +1,45 @@
 <div class="margen">
-    
-<div *ngFor="let item of products">
-    
-    <div nz-card-grid class="gridStyle">
-        
-        <nz-card [nzCover]="coverTemplate" [nzActions]="[actionAddCart, Quantity]" >
-            <nz-card-meta [nzTitle]=item.name></nz-card-meta>
-        </nz-card>
-        
 
-        <ng-template #coverTemplate>
-            <img alt="imagen producto" [src]=item.image />
-        </ng-template>
-        
-        <ng-template #actionAddCart>
-             Añadir a carrito 
-            <button nz-button nzType="primary" [nzSize]="'small'" nzShape="circle" (click)="addToCart(item)">
-                <span nz-icon nzType="plus"> </span>
-            </button>
-        </ng-template>
-        
-        <ng-template #Quantity>
-            Cantidad disponible
-            <span class="quantity"> {{item.quantity? item.quantity : 0}} </span>
-        </ng-template>
-        
+    <div class="btn-go-to-cart">
+        <app-cart></app-cart>
+
     </div>
-    
-</div>
+
+    <div nz-row>
+        <div *ngFor="let item of products">
+                <div nz-col nzXs="24" nzSm="24" nzMd="24" nzLg="24" nzXl="24">
+                <div nz-card-grid class="gridStyle">
+
+
+                    <nz-card [nzCover]="coverTemplate" [nzActions]="[actionAddCart, Quantity]">
+                        <nz-card-meta [nzTitle]=item.name></nz-card-meta>
+                    </nz-card>
+
+
+                    <ng-template #coverTemplate>
+                        <div class="coverTemplate">
+                            <img alt="imagen producto" [src]=item.image />
+                        </div>
+                    </ng-template>
+
+                    <ng-template #actionAddCart>
+                        Añadir a carrito
+                        <button nz-button nzType="primary" [nzSize]="'small'" nzShape="circle"
+                            (click)="addToCart(item)">
+                            <span nz-icon nzType="plus"> </span>
+                        </button>
+                    </ng-template>
+
+                    <ng-template #Quantity>
+                        Cantidad disponible
+                        <span class="quantity"> {{item.quantity? item.quantity : 0}} </span>
+                    </ng-template>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
 
 </div>
 <nz-pagination [nzPageIndex]="pageIndex" [nzTotal]="totalElements" nzShowSizeChanger [nzPageSize]="pageSize">

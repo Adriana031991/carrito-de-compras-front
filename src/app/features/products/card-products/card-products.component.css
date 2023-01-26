@@ -21,8 +21,7 @@ nz-card {
 }
 
 .gridStyle {
-    width: 50%;
-    textAlign: center;
+    width: 100%;
 }
 
 
@@ -34,4 +33,26 @@ button {
 
 .quantity {
     color: black;
+}
+
+.btn-go-to-cart {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.coverTemplate{
+    width: 80%;
+    padding: 10px;
+    position: relative;
+    left: 7%;
+}
+
+img {
+    width: 100%;
+}
+
+.ant-row, .ant-row::after, .ant-row::before {
+    display: flex;
+    justify-content: center;
+    gap: 5%;
 }

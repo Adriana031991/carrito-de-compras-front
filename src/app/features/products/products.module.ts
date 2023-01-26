@@ -8,21 +8,23 @@ import { UiModule } from 'src/app/shared/ui.module';
 import { EditProductComponent } from './table-products/edit-product/edit-product.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CreateProductComponent } from './table-products/create-product/create-product.component';
+import { ShoppingCartModule } from "../shopping-cart/shopping-cart.module";
 
 
 @NgModule({
-  declarations: [
-    CardProductsComponent,
-    TableProductsComponent,
-    EditProductComponent,
-    CreateProductComponent,
-  ],
-  imports: [
-    CommonModule,
-    ProductsRoutingModule,
-    UiModule,
-    FormsModule,
-    ReactiveFormsModule
-  ]
+    declarations: [
+        CardProductsComponent,
+        TableProductsComponent,
+        EditProductComponent,
+        CreateProductComponent,
+    ],
+    imports: [
+        CommonModule,
+        ProductsRoutingModule,
+        UiModule,
+        FormsModule,
+        ReactiveFormsModule,
+        ShoppingCartModule
+    ]
 })
 export class ProductsModule { }

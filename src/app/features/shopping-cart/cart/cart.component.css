@@ -1,0 +1,11 @@
+.cart {
+    display: flex;
+    justify-content: space-around;
+    margin: 6px auto;
+    align-items: center;
+}
+
+.cart h3 {
+    font-size: .8rem;
+    margin-right: 7px;
+}
